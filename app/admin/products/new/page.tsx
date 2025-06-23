@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import AddProductsForm from "@/components/products/AddProductsForm";
 import ProductForm from "@/components/products/ProductsFroms";
 import Heading from "@/components/ui/Heading";

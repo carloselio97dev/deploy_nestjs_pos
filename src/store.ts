@@ -32,7 +32,7 @@ const initialState = {
 export const useStore = create<Store>()(devtools((set, get) => ({
   ...initialState,
   addToCart: (product) => {
-    const { id: productId, categoryId, ...data } = product
+    const { id: productId, ...data } = product
     let contents: ShoppingCart = []
     const duplicated = get().contents.findIndex(item => item.productId === productId);
 
@@ -97,7 +97,6 @@ export const useStore = create<Store>()(devtools((set, get) => ({
       }),
     })
     const json = await req.json();
-    const status = req.status;
     const coupon= CouponResponseSchema.parse(json);
      set(()=>({
         coupon

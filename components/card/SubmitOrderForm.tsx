@@ -36,7 +36,7 @@ export const SubmitOrderForm = () => {
        clearOrder();
     }
 
-  },[state])
+  },[state,clearOrder])
 
   
 
