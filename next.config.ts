@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns:[
         {
         protocol:'https',
-        hostname: 'deploy-pos-nestjs-xi6a.onrender.com',
+        hostname: 'https://deploy-pos-nestjs-xi6a.onrender.com/products',
       },
       {
         protocol:'https',
