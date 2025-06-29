@@ -2,13 +2,16 @@
 
 import { ErrorResponseSchema, ProductFormSchema } from "@/src/schemas";
 
+
+const API = process.env.API_URL;
+
+
 type ActionStateType = {
     errors:string[],
     success:string
 }
 
 export async function addProduct(prevState:ActionStateType, formData:FormData){
-
         const product = ProductFormSchema.safeParse({
                 name:formData.get('name'),
                 price:formData.get('price'),
@@ -16,7 +19,6 @@ export async function addProduct(prevState:ActionStateType, formData:FormData){
                 inventory:formData.get('inventory'),
                 categoryId:formData.get('categoryId')
         })
-
         if(!product.success){
             return {
                 errors:product.error.issues.map(issue => issue.message),
@@ -24,7 +26,7 @@ export async function addProduct(prevState:ActionStateType, formData:FormData){
             }
         }
 
-        const url=`${process.env.API_URL}/products`
+        const url=`${API}/products`
         const req= await fetch(url,{
         method:'POST',
         headers:{

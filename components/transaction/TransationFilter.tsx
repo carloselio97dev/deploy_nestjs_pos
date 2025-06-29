@@ -14,7 +14,6 @@ type Value= ValuePiece | [ValuePiece, ValuePiece];
 
 
 export default function TransactionFilter() {
-  
     const [date, setDate] = useState<Value>(new Date());
     //const formattedDate= format(date?.toString() || new Date(),'yyyy-MM-dd');
     const formattedDate = format(date instanceof Date ? date : new Date(), 'yyyy-MM-dd');
